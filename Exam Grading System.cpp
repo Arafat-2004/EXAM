@@ -7,6 +7,7 @@ public:
     std::string name;
     int score;
 
+    // Constructor to initialize Student
     Student(std::string n, int s) : name(n), score(s) {}
 };
 
