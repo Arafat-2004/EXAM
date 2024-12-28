@@ -53,6 +53,39 @@ public:
         }
         std::cout << "---------------------------\n";
     } 
+// Calculate the average score
+    void calculateStatistics() {
+        if (students.empty()) {
+            std::cout << "No students available to calculate statistics.\n";
+            return;
+        }
+
+        int totalScore = 0;
+        int maxScore = 0;
+        int minScore = 100;
+        std::string topStudent, bottomStudent;
+
+        for (const auto& student : students) {
+            totalScore += student.score;
+            if (student.score > maxScore) {
+                maxScore = student.score;
+                topStudent = student.name;
+            }
+            if (student.score < minScore) {
+                minScore = student.score;
+                bottomStudent = student.name;
+            }
+        }
+
+        double average = static_cast<double>(totalScore) / students.size();
+        std::cout << "Statistics:\n";
+        std::cout << "---------------------------\n";
+        std::cout << "Average Score: " << average << "\n";
+        std::cout << "Top Student: " << topStudent << " with score " << maxScore << "\n";
+        std::cout << "Lowest Score: " << bottomStudent << " with score " << minScore << "\n";
+        std::cout << "---------------------------\n";
+    }
+};
 
 int main() {
     Exam exam;
