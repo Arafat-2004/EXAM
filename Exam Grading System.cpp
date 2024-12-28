@@ -16,9 +16,15 @@ private:
     std::vector<Student> students;
 
 public:
+    // Add a student to the exam list
     void addStudent(const std::string& name, int score) {
-        students.push_back(Student(name, score));
+        if (score < 0 || score > 100) {
+            std::cout << "Invalid score for " << name << ". Score must be between 0 and 100.\n";
+            return;
+        }
+        students.emplace_back(name, score); // Optimized using emplace_back
     }
+
 
     void generateResults() {
         std::cout << "Exam Results:\n";
