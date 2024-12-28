@@ -37,9 +37,10 @@ public:
         std::cout << "---------------------------\n";
     }
 
- 
+// Calculate grades for each student
     void calculateGrades() {
         std::cout << "Grades:\n";
+        std::cout << "---------------------------\n";
         for (const auto& student : students) {
             char grade;
             if (student.score >= 90) grade = 'A';
@@ -50,8 +51,8 @@ public:
 
             std::cout << "Student: " << student.name << ", Grade: " << grade << "\n";
         }
-    }
-};
+        std::cout << "---------------------------\n";
+    } 
 
 int main() {
     Exam exam;
