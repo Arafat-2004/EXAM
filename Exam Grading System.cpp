@@ -25,14 +25,19 @@ public:
         students.emplace_back(name, score); // Optimized using emplace_back
     }
 
-
+    // Generate a list of results
     void generateResults() {
         std::cout << "Exam Results:\n";
+        std::cout << "---------------------------\n";
+        std::cout << "Student Name    | Score\n";
+        std::cout << "---------------------------\n";
         for (const auto& student : students) {
-            std::cout << "Student: " << student.name << ", Score: " << student.score << "\n";
+            std::cout << student.name << "       | " << student.score << "\n";
         }
+        std::cout << "---------------------------\n";
     }
 
+ 
     void calculateGrades() {
         std::cout << "Grades:\n";
         for (const auto& student : students) {
