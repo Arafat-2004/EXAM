@@ -89,14 +89,18 @@ public:
 
 int main() {
     Exam exam;
+
+    // Sample data for testing
     exam.addStudent("Lazaro", 85);
     exam.addStudent("Carlos", 92);
     exam.addStudent("Furuwash", 78);
     exam.addStudent("Cannibal", 65);
     exam.addStudent("Malone", 55);
 
+    // Displaying exam results and grades
     exam.generateResults();
     exam.calculateGrades();
+    exam.calculateStatistics();
 
     return 0;
 }
